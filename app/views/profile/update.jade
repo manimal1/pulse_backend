@@ -1,0 +1,28 @@
+extends ../layout.jade
+
+block content
+  - var avatar = {link: (user.providerId ? "//graph.facebook.com/" + user.providerId + "/picture?type=large" : (user.avatar ? "" : "../../assets/images/avatar.png"))};
+
+  section.profile
+    a.button.button--home(href="/") P
+    form.form.profile__form(role='form', action="/profile/update", method="post")
+      // need to set user profile picture through db if not signed in via FB
+      //  - if(user.providerId)
+
+      img.profile__avatar(src= avatar.link)
+      .profile__item Name: #{user.username}
+
+      .profile__form-row
+        label.profile__form-label(for="name") Name
+        input.profile__form-input(type='text', name="name", id="name", placeholder='#{user.name}')
+      .profile__form-row
+        label.profile__form-label(for="email") Email
+        input.profile__form-input(type='text', name="email", id="email", placeholder='#{user.email}')
+      .profile__form-row
+        label.profile__form-label(for="username") Username
+        input.profile__form-input(type='text', name="username", id="username", placeholder='#{user.username}')
+      //- .profile__form-row
+      //-   label.profile__form-label(for="password") password
+      //-   input.profile__form-input(type='text', name="password", id="password", placeholder='#{user.password}')
+
+      button.button.button--primary.profile__form-button(type='submit', value='Update') Update

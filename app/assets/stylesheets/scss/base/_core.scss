@@ -1,0 +1,58 @@
+@import './variables';
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: $base-black-color;
+  color: $base-white-color;
+  font-family: $font-family-base;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+h1 {
+  margin: 10px 0;
+}
+
+.truncate {
+  min-width: 100px;
+  max-width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.flex-row {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.flex-column {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.mobile-only {
+  display: none;
+
+  @include mobile {
+    display: block;
+  }
+}
+
+.mobile-hide {
+  display: block;
+
+  @include mobile {
+    display: none;
+  }
+}

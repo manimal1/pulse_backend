@@ -1,0 +1,23 @@
+extends ../layout.jade
+
+//- var avatar = {link: (user.providerId ? "//graph.facebook.com/" + user.providerId + "/picture?type=large" : (user.avatar ? "" : "../../assets/images/avatar.png"))};
+block content
+  section.profile
+    a.button.button--home(href="/") P
+    h1.profile__title Profile Page
+
+    //- if(user.providerId)
+    //img.profile__avatar(src= avatar.link)
+
+    .profile__item
+      span.profile__key Username:
+      span.profile__value #{user.username}
+    .profile__item
+      span.profile__key Name:
+      span.profile__value #{user.name}
+    .profile__item
+      span.profile__key email:
+      span.profile__value #{user.email}
+
+    .profile__link
+      a.button.button--primary(href="/profile/update") Update Profile

@@ -1,0 +1,89 @@
+@mixin retina {
+  @media #{$retina} { @content; }
+}
+
+@mixin mobile-small {
+  @media #{$mobile-small} { @content; }
+}
+
+@mixin mobile {
+  @media #{$mobile} { @content; }
+}
+
+@mixin mobile-big {
+  @media #{$mobile-big} { @content; }
+}
+
+@mixin tablet {
+  @media #{$tablet} { @content; }
+}
+
+@mixin tablet-only {
+  @media #{$tablet-only} { @content; }
+}
+
+@mixin desktop {
+  @media #{$desktop} { @content; }
+}
+
+@mixin desktop-only {
+  @media #{$desktop-only} { @content; }
+}
+
+@mixin large {
+  @media #{$large} { @content; }
+}
+
+@mixin large-only {
+  @media #{$large-only} { @content; }
+}
+
+@mixin xlarge {
+  @media #{$xlarge} { @content; }
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin transform($args...) {
+  -webkit-transform: $args;
+  -moz-transform: $args;
+  -ms-transform: $args;
+  -o-transform: $args;
+  transform: $args;
+}
+
+@mixin stretch($top: auto, $right: auto, $bottom: auto, $left: auto, $position: absolute) {
+  position: $position;
+  @if $top {
+    top: $top;
+  }
+  @if $bottom {
+    bottom: $bottom;
+  }
+  @if $left {
+    left: $left;
+  }
+  @if $right {
+    right: $right;
+  }
+}
+
+@mixin stretch-fixed($top: 0, $right: 0, $bottom: 0, $left: 0) {
+  @include stretch($top, $right, $bottom, $left, fixed);
+}
+
+@mixin disable-input-focus-glow {
+  -moz-appearance: none;
+
+  &:focus {
+    outline-color: transparent;
+    outline-style: none;
+    box-shadow: none;
+  }
+}

@@ -1,0 +1,20 @@
+extends ../layout.jade
+
+block content
+  //- each val in messages
+  //-   .flash-error= messages[i]
+
+  .container.login
+    .form.login--form
+      h1.login__title Register Page
+      form(role='form', action="/register", method="post", style='max-width: 300px;')
+        .login__form-row
+          input.login__form-input(type='text', name="username", placeholder='Enter Username')
+        .login__form-row
+          input.login__form-input(type='password', name="password", placeholder='Password')
+        button.button.login__form-button(type='submit', value='Reigster') Register
+        a(href='/')
+          button.button.login__form-button(type="button") Cancel
+
+        .login__form-row
+          a(href="/auth/facebook" class="button login__social-link login__form-button") Login with Facebook

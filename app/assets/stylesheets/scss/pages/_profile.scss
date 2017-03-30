@@ -1,0 +1,31 @@
+.profile {
+  text-align: center;
+  padding-top: 25px;
+
+  .profile__avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+  }
+
+  .profile__form {
+    position: relative;
+  }
+
+  .profile__form-label {
+    width: 120px;
+    margin-right: 20px;
+  }
+
+  .profile__form-input {
+    width: 180px;
+  }
+
+  .profile__link {
+    margin-top: 15px;
+
+    .button {
+      padding: 10px;
+    }
+  }
+}

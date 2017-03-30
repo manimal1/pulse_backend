@@ -1,0 +1,19 @@
+extends ../layout.jade
+
+block content
+  if (!user)
+    .login
+      .login__options
+        a.login__button(href="/login") Login
+        a.login__button(href="/register") Register
+  
+  if (user)
+    #map
+    .login__message
+      .login__message-text Welcome #{user.username}!
+      a.login__button(href="/logout") Logout
+    
+    nav.nav
+      a.nav__menu-item(href="/profile") Profile
+      .nav__menu-item Connects
+      .nav__menu-item Hotspots

@@ -1,0 +1,138 @@
+//
+// Susy base layout
+// --------------------------------------------------
+$susy: (
+  columns: 12,
+  gutters: 0.05,
+  gutter-position: after,
+);
+
+/* We will use $susy-xx to define the number of columns(xx) in a grid
+ then you just add: @include layout($susy-xx); in your containing elements scss
+ and then, for any column element within that container, just add: @include span(x);
+ where x = the number of columns you want to span.
+ don't forget to use last in the last column element of grids with gutter-position: after.
+
+ example:
+ .container-element { @include container(); @include layout($susy-32);}
+ .column-element-1 { @include span(12); }
+ .column-element-2 { @include span(20 last); }
+
+ Notice: I am purposely not saying .container {} .column {}, because you do not need to arbitrarily create
+ these elements/classes. Most often, you can simply apply susy to already existing elements.
+ this is more semantic and purposeful, and flexible.  If you want, you can map out specific grid layouts to
+ have cusotm gutters, gutter positions, transitions, etc. */
+
+$susy-two: (
+  columns: 2,
+  gutters: 0.05,
+  gutter-position: after,
+);
+
+$susy-two-split: (
+  columns: 2,
+  gutters: 0.05,
+  gutter-position: split,
+);
+
+$susy-two-inside: (
+  columns: 2,
+  gutters: 0.05,
+  gutter-position: inside,
+);
+// --------------------------------------------------
+
+//
+// Colors
+// --------------------------------------------------
+$base-white-color: #FFFFFF;
+$base-black-color: #000000;
+
+$primary-green-color: #61E6B4;
+
+$facebook-color: #3b5998;
+
+//
+// Heights and widths
+// --------------------------------------------------
+
+$primary-toolbar-height:          60px;
+$primary-sidenav-width:           60px;
+
+//
+// z-index
+// --------------------------------------------------
+
+$z-index-1:                       1;
+$z-index-2:                       10;
+$z-index-3:                       100;
+
+//
+// Animation
+// --------------------------------------------------
+$animation-speed:                 0.4s;
+
+//
+// Padding
+// --------------------------------------------------
+
+$padding-content:                 10px;
+$padding-content-large:           20px;
+$padding-content-larger:          25px;
+
+$padding-base-vertical:           6px;
+$padding-base-horizontal:         12px;
+
+$padding-large-vertical:          10px;
+$padding-large-horizontal:        16px;
+
+//
+// Borders
+// ---------------------------------------------------
+
+$border-radius-base:              3px;
+$border-radius-large:             6px;
+
+//
+// Fonts
+// --------------------------------------------------
+
+$font-family-sans-serif:          'Roboto', sans-serif;
+
+$font-family-base:                $font-family-sans-serif;
+$font-weight-heavy:               900;
+$font-weight-thin:                300;
+$font-weight-medium:              600;
+$font-size-base:                  13px;
+$font-size-large:                 18px;
+$font-size-small:                 11px;
+
+$line-height-base:                1.428571429; // 20/14
+$line-height-computed:            floor($font-size-base * $line-height-base); // ~20px
+$line-height-large:               1.33;
+$line-height-small:               1.5;
+
+$headings-font-family:            $font-family-base;
+$headings-font-weight:            500;
+$headings-line-height:            1.2;
+
+//
+// Grids
+// --------------------------------------------------
+
+$grid-padding-width:              10px;
+$grid-responsive-sm-break:        567px;  // smaller than landscape phone
+$grid-responsive-md-break:        767px;  // smaller than portrait tablet
+$grid-responsive-lg-break:        1023px; // smaller than landscape tablet
+
+$retina: 'only screen and (min-resolution: 2dppx)';
+$mobile-small: '(max-width: 567px)';
+$mobile: '(max-width: 767px)';
+$mobile-big: '(min-width: 551px) and (max-width: 767px)';
+$tablet: '(min-width: 768px)';
+$tablet-only: '(min-width: 768px) and (max-width: 991px)';
+$desktop: '(min-width: 992px)';
+$desktop-only: '(min-width: 992px) and (max-width: 1199px)';
+$large: '(min-width: 1200px)';
+$large-only: '(min-width: 1200px) and (max-width: 1449px)';
+$xlarge: '(min-width: 1450px)';

@@ -1,0 +1,7 @@
+{
+  "uri": "http://localhost:3000/users",
+  "method": "GET",
+  "timeout": 10000,
+  "followRedirect": true,
+  "maxRedirects": 10
+}

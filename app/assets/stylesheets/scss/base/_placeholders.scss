@@ -1,0 +1,15 @@
+%container {
+  @include container();
+  @include tablet { max-width: 730px; }
+  @include desktop { max-width: 950px; }
+  @include large { max-width: 1150px; }
+  @include xlarge { max-width: 1430px; }
+}
+
+%maxWidth {
+  margin: 0 auto;
+  @include tablet { max-width: 730px; }
+  @include desktop { max-width: 950px; }
+  @include large { max-width: 1150px; }
+  @include xlarge { max-width: 1430px; }
+}

@@ -1,0 +1,9 @@
+{
+  "config" : "/config",
+  "routes" : "/app/controllers/hapi/routes",
+  "models" : "/app/models/hapi",
+  "controllers" : "/app/controllers/hapi",
+  "assets": "/app",
+  "templates" : "/app/views",
+  "public": "/app/assets"
+}
